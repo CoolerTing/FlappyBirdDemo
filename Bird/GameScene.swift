@@ -89,10 +89,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bird?.physicsBody?.isDynamic = true
         bird?.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 10))
         
-        
         let addBarrier = SKAction.run {
             self.addBarrier()
         }
+        
         run(SKAction.repeatForever((SKAction.sequence([addBarrier, SKAction.wait(forDuration: 5)]))), withKey: "addBarrier")
         status = .gaming
     }
